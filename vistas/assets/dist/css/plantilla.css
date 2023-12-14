@@ -1,0 +1,75 @@
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: white !important;
+    background: rgb(20, 20, 255) !important;
+    font-weight: bold !important;
+    border-radius: 30px;
+}
+table.dataTable tbody td {
+    white-space: nowrap !important;
+
+
+}
+#tbl_productos thead th{
+    white-space: nowrap !important;
+
+}
+#tbl_productos tbody td:eq(0) {
+    text-align: center;
+}
+#tbl_productos tbody td {
+    text-align: center;
+}
+#tbl_categorias thead th{
+    white-space: nowrap !important;
+
+}
+#tbl_categorias tbody td:eq(0) {
+    text-align: center;
+}
+#tbl_categorias tbody td {
+    text-align: center;
+}
+#tbl_proveedores thead th{
+    white-space: nowrap !important;
+
+}
+#tbl_proveedores tbody td:eq(0) {
+    text-align: center;
+}
+#tbl_proveedores tbody td {
+    text-align: center;
+}
+.imagenlogo{
+    alt:logo style="width: auto; height: auto;"
+}
+/* Agregar Producto Button */
+.addNewRecord {
+    background-color: #3498db !important; /* Cambia el color de fondo al que desees */
+    color: white!important; /* Cambia el color del texto al que desees */
+}
+
+/* Exportar Excel Button */
+.buttons-excel {
+    background-color: #27ae60 !important; /* Cambia el color de fondo al que desees */
+    color: white !important; /* Cambia el color del texto al que desees */
+}
+
+/* Imprimir Button */
+.buttons-print {
+    background-color: #e74c3c !important; /* Cambia el color de fondo al que desees */
+    color: white !important; /* Cambia el color del texto al que desees */
+}
+/* Cambia el color de fondo del botón Recargar */
+.reloadButton {
+    background-color: #3498db; /* Puedes cambiar este color según tus preferencias */
+    color: #fff; /* Cambia el color del texto según sea necesario */
+}
+/* Cambia el color de fondo del botón Recargar */
+#tbl_proveedores .reloadButton {
+    background-color: #3498db !important; /* Puedes cambiar este color según tus preferencias */
+    color: #fff !important; /* Cambia el color del texto según sea necesario */
+}
+
+.sidebar-mini{
+    height:100vh !important;
+}
