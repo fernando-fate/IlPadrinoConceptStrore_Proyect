@@ -114,6 +114,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <!-- ============================================================
+    =LIBRERIAS PARA USO DE DATATABLES FILTER CSS Y JS
+    ===============================================================-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css">
+    <script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>
+    <!-- ============================================================
     =LIBRERIAS PARA EXPORTAR A ARCHIVOS
     ===============================================================-->
     <script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
@@ -149,7 +154,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="vistas/assets/dist/js/adminlte.min.js"></script>
     <script src="vistas/assets/dist/js/plantilla.js"></script>
 
-
+    <style>
+        thead input {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <?php if(isset($_SESSION["usuario"])): ?>
