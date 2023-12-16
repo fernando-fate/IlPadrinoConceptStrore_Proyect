@@ -35,4 +35,14 @@ class UsuarioControlador{
         }
     }
 
+    static public function ctrObtenerMenuUsuario($id_usuario){
+        $menuUsuario = UsuarioModelo::mdlObtenerMenuUsuario($id_usuario);
+        return $menuUsuario;
+    }
+
+    static public function ctrObtenerSubMenuUsuario($idMenu){
+        $subMenuUsuario = UsuarioModelo::mdlObtenerSubMenuUsuario($idMenu);
+        return $subMenuUsuario;
+    }
+
 }
