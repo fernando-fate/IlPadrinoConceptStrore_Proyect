@@ -11,7 +11,7 @@
         <script>
             window.location = "http://localhost/POS-main/"
         </script>
-        
+
         ';
 
     }
@@ -68,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css">
 
-    
+
 
     <!-- Estilos personzalidos -->
     <link rel="stylesheet" href="vistas/assets/dist/css/plantilla.css">
@@ -86,10 +86,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- jQuery -->
     <script src="vistas/assets/plugins/jquery/jquery.min.js"></script>
-    
+
     <!-- Bootstrap 4 -->
     <script src="vistas/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- ChartJS -->
     <script src="vistas/assets/plugins/chart.js/Chart.min.js"></script>
 
@@ -101,6 +101,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- JS Bootstrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Js Tree Estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+
     <!-- AdminLTE App -->
     <script src="vistas/assets/dist/js/adminlte.min.js"></script>
 
@@ -109,15 +112,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ============================================================
     =LIBRERIAS PARA USO DE DATATABLES JS
     ===============================================================-->
-    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>        
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
 
 
-    <!-- ============================================================
-    =LIBRERIAS PARA USO DE DATATABLES FILTER CSS Y JS
-    ===============================================================-->
-    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css">
-    <script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>
+
     <!-- ============================================================
     =LIBRERIAS PARA EXPORTAR A ARCHIVOS
     ===============================================================-->
@@ -137,7 +136,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ============================================================
     =LIBRERIAS PARA USO DE DATATABLES JS
     ===============================================================-->
-    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>        
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
 
 
@@ -151,20 +150,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://kit.fontawesome.com/a657e7015a.js" crossorigin="anonymous"></script>
 
     <!-- AdminLTE App -->
-    <script src="vistas/assets/dist/js/adminlte.min.js"></script>
+    <!-- <script src="vistas/assets/dist/js/adminlte.min.js"></script> -->
     <script src="vistas/assets/dist/js/plantilla.js"></script>
 
+    <!--JSTree js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 
-    <!-- En el encabezado de tu HTML -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script> -->
 
-    <style>
-        thead input {
-            width: 100%;
-        }
-    </style>
 </head>
 
-<?php if(isset($_SESSION["usuario"])): ?>
+<?php if(isset($_SESSION["usuario"])):?>
 
     <body class="hold-transition sidebar-mini">
         <div class="wrapper" >
@@ -177,18 +173,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 <?php include "vistas/". $_SESSION['usuario']->vista ?>
-                
 
             </div>
             <!-- /.content-wrapper -->
 
             <?php include "modulos/footer.php"; ?>
-            
+
         </div>
         <!-- ./wrapper -->
 
         <script>
-            
+
             function CargarContenido(pagina_php,contenedor){
                 $("." + contenedor).load(pagina_php);
             }
@@ -196,7 +191,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </script>
 
     </body>
-
+    <?php
+        echo '<script>';
+        echo 'console.log(' . json_encode($_SESSION["usuario"]) . ');'; // json_encode() se usa para manejar correctamente las cadenas con comillas, etc.
+        echo '</script>';
+    ?>
 <?php else: ?>
 
     <body>

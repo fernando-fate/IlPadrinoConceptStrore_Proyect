@@ -45,13 +45,19 @@ class UsuarioModelo{
         return $stmt -> fetchAll(PDO::FETCH_CLASS);
     }
 
-    static public function mdlObtenerSubMenuUsuario($idMenu){
+    static public function mdlObtenerSubMenuUsuario($idMenu, $idPerfil){
 
         $stmt = Conexion::conectar()->prepare("select m.id, m.modulo, m.icon_menu, m.vista
                                                 from modulos m
+                                                inner join perfil_modulo pm
+                                                    on pm.id_modulo = m.id
+                                                inner join perfiles p
+                                                    on p.id_perfil = pm.id_perfil
                                                 where m.padre_id = :idMenu
+                                                and p.id_perfil = :idPerfil
                                                 order by m.id");
         $stmt->bindParam(":idMenu", $idMenu, PDO::PARAM_STR);
+        $stmt->bindParam(":idPerfil", $idPerfil, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt-> fetchAll(PDO::FETCH_CLASS);
 
